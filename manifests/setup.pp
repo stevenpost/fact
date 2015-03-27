@@ -1,9 +1,9 @@
 class fact::setup {
   $factsdir = "${::puppet_vardir}/sufact"
 
-  $root_group = $id ? {
+  $root_group = $::id ? {
     root    => 0,
-    default => $id
+    default => $::id
   }
 
   file { $factsdir:
